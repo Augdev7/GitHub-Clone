@@ -53,7 +53,7 @@ const Hero = (props: Props) => {
                         <input className='h-12 focus:outline-none max-md:rounded-md md:rounded-s-md right-0 w-full placeholder:text-[16px] pl-3' placeholder="Email address" type="email" name="user_email" id="user_email" autoComplete="off" spellCheck="false"/>
                         </div>
                     </div>
-                    <button aria-label type="button" className='mb-10 md:mb-0 py-3 w-full home-campaign-signup-button text-[16px] max-md:rounded-md md:rounded-e-md text-white font-semibold'>
+                    <button type="button" className='mb-10 md:mb-0 py-3 w-full home-campaign-signup-button text-[16px] max-md:rounded-md md:rounded-e-md text-white font-semibold'>
                         Sign up for GitHub
                     </button>
                     </div>
