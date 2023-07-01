@@ -5,6 +5,12 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Typewriter } from 'react-simple-typewriter'
+
+import Icon from '@/public/icon.svg'
+import Drone from '@/public/hero-drone1.png'
+import { motion } from 'framer-motion'
+import ParticlesContainer from './../ParticlesContainer'
 
 type Props = {}
 
@@ -15,13 +21,14 @@ const Hero = (props: Props) => {
     <div className='relative max-w-[1280px] lg:pt-32 md:px-10 mx-auto pt-16'>
       <Image
         className='absolute hero-drone top-28 w-1/4 h-auto right-0 xl:right-0'
-        width='500'
-        height='326'
+        width='320'
+        height='208'
         priority
-        src='https://github.githubassets.com/images/modules/site/home-campaign/hero-drone.webp'
+        src={Drone}
         alt=''
       />
       <div className='flex'>
+        <ParticlesContainer />
         <div className='relative '>
           <Image
             aria-hidden='true'
@@ -81,14 +88,14 @@ const Hero = (props: Props) => {
                   decoding='async'
                   alt=''
                   aria-hidden='true'
-                  src='https://github.githubassets.com/images/modules/site/eyebrow-banner-icon-copilot-x.svg'
+                  src={Icon}
                 />
                 <div className='md:pr-5 pr-3 md:mr-2 md:pl-2'>
                   <div className='font-medium text-white text-[16px] max-md:text-[14px] leading-5'>
-                    Introducing GitHub Copilot X
+                    CONECTE-SE
                   </div>
                   <div className='text-neutral-500 max-md:text-[14px] text-[16px]'>
-                    Your Ai pair programmer is leveling Up
+                    e transforme seu negócio.
                   </div>
                 </div>
                 <div className='ml-auto'>
@@ -120,13 +127,30 @@ const Hero = (props: Props) => {
               </div>
             </Link>
           </div>
-          <h1 className='md:mt-24 lg:mt-28 sm:mt-10 relative z-2 max-md:mb-5 text-[48px] md:text-[72px] max-sm:leading-[60px] max-md:leading-[80px] lg:text-[80px] font-semibold text-white'>
-            {' '}
-            Let&apos;s build from&nbsp;here
-          </h1>
+          <motion.h1
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className='md:mt-24 lg:mt-28 sm:mt-10 relative z-2 max-md:mb-5 text-[48px] md:text-[72px] max-sm:leading-[60px] max-md:leading-[80px] lg:text-[80px] font-semibold text-white'
+          >
+            <Typewriter
+              words={[
+                ' PUBLICIDADE.',
+                ' MÍDIA CONTEÚDO.',
+                ' PERFORMANCE.',
+                ' DADOS',
+              ]}
+              loop
+              cursor
+              cursorStyle='|'
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </motion.h1>
           <p className='relative z-1 text-[24px] md:text-[28px]  lg:text-[32px] leading-[30px] md:leading-[36px] lg:leading-[44px] mb-5 md:mb-12 md:10/12  lg:w-9/12 text-[#7d8590]'>
-            Harnessed for productivity. Designed for collaboration. Celebrated
-            for built-in security. Welcome to the platform developers&nbsp;love.
+            Soluções completas em Marketing Digital para o seu negócio se
+            destacar na internet.
           </p>
           <div className='flex lg:w-11/12 md:space-x-5 max-md:flex-col'>
             <form action=''>
@@ -135,7 +159,7 @@ const Hero = (props: Props) => {
                   <div>
                     <input
                       className='h-12 focus:outline-none max-md:rounded-md md:rounded-s-md right-0 w-full placeholder:text-[16px] pl-3'
-                      placeholder='Email address'
+                      placeholder='Adicione seu E-mail'
                       type='email'
                       name='user_email'
                       id='user_email'
@@ -148,7 +172,7 @@ const Hero = (props: Props) => {
                   type='button'
                   className='mb-10 md:mb-0 py-3 w-full home-campaign-signup-button text-[16px] max-md:rounded-md md:rounded-e-md text-white font-semibold'
                 >
-                  Sign up for GitHub
+                  Entrar com Github
                 </button>
               </div>
             </form>
@@ -159,7 +183,7 @@ const Hero = (props: Props) => {
               href=''
               className='flex items-center w-full md:w-auto justify-center text-[16px] py-3 px-5 max-md:mt-4 rounded-md border-[#ae88f9] border-[1.5px] text-white'
             >
-              Start a free enterprise trial
+              Inicie uma avaliação empresarial gratuita!
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className={` arrow-symbol-mktg text-white ml-3 transition ease-in duration-150 ${
